@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace ListaVetor
 {
@@ -42,12 +44,12 @@ namespace ListaVetor
 
 
                     case 2:
-                        //exercicio2();
+                        exercicio2();
                         break;
 
 
                     case 3:
-                        // exercicio3();
+                        exercicio3();
                         break;
                     case 4:
                         // exercicio4();
@@ -78,7 +80,7 @@ namespace ListaVetor
                         break;
                 }
 
-                Console.WriteLine("Deseja continuar \n");
+                Console.WriteLine("Deseja continuar S/N");
                 op = Console.ReadLine().ToLower();
 
             } while (op == "s");
@@ -91,18 +93,18 @@ namespace ListaVetor
         public void exercicio1()
         {
             double[] numeros = new double[10];
-            double resultado = 0, total=0;
+            double resultado = 0, total = 0;
             Random random = new Random();
 
             Console.Clear();
             Console.WriteLine("Digite as 4 notas: ");
-          
-           
-            for (int i = 0; i <10; i++)
+
+
+            for (int i = 0; i < 10; i++)
             {
-               
+
                 resultado += double.Parse(Console.ReadLine());
-        
+
 
             }
 
@@ -114,15 +116,63 @@ namespace ListaVetor
 
         }
 
+        public void exercicio2()
+        {
+            String[] nomes = new String[5];
+
+
+
+
+            Console.WriteLine("Digite 5 nomes ");
+            for (int i = 0; i < 5; i++)
+
+            {
+                Console.Clear();
+                Console.WriteLine("Digite o nome: ");
+                nomes[i] = Console.ReadLine();
+
+
+            }
+
+            Array.Sort(nomes);
+
+            Console.WriteLine("\nNomes em ordem alfabetica ");
+            foreach (var nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
+
+        }
+
+        public void exercicio3()
+
+        {
+            {
+                {
+                    int[] numeros = new int[10];
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        Console.Write($"Digite o número {i + 1}: ");
+                        numeros[i] = int.Parse(Console.ReadLine());
+                    }
+
+                    bool repetido = numeros.Distinct().Count() != numeros.Length;
+                    Console.WriteLine(repetido ? "Existem números repetidos." : "Não existem números repetidos.");
+                }
+            }
 
 
 
 
 
 
- 
-    
-    
-    
-    }
+
+
+
+
+
+
+
+        }
 }

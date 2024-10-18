@@ -55,7 +55,7 @@ namespace ProjetoTI46
                         break;
                 }
 
-                Console.WriteLine("Deseja continuar \n");
+                Console.WriteLine("Deseja continuar S/N \n");
                 op = Console.ReadLine().ToLower();
 
             } while (op == "s");
